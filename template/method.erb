@@ -1,4 +1,9 @@
 <%="# http://www.careercup.com/question?id=#{@question_id}"%>
+<% if @description %>
+<%= "=begin" %>
+<%= @description %>
+<%= "=end" %>
+<% end %>
 def method_<%=@question_id%>
 
 end
