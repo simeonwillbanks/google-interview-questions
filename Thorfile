@@ -9,7 +9,12 @@ class Default < Thor
     @question_id = question_id
     @description = nil
     if options[:get_description]
-      @description = Mechanize.new.get("http://www.careercup.com/question?id=#{@question_id}").search('/html/body/div/div/div/ul/li/span[3]/p').inner_html.gsub('<br>', "\n")
+      @description = Mechanize.
+                      new.
+                      get("http://www.careercup.com/question?id=#{@question_id}").
+                      search('/html/body/div/div/div/ul/li/span[3]/p').
+                      inner_html.
+                      gsub('<br>', "\n")
     end
     template 'method.erb', "questions/#{@question_id}.rb"
     template 'test.erb', "test/#{@question_id}_test.rb"
