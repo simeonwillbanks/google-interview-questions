@@ -4,7 +4,7 @@ class Default < Thor
   desc 'new QUESTION_ID', 'Create method and test files for a new question'
   def new(question_id)
     @question_id = question_id
-    template 'method.erb', "#{@question_id}.rb"
+    template 'method.erb', "questions/#{@question_id}.rb"
     template 'test.erb', "test/#{@question_id}_test.rb"
   end
 
