@@ -23,3 +23,12 @@ def all_substrings(str)
   end
   subs
 end
+=begin
+Question: what’s the easiest way to get ["X::Y::Z", "X::Y", "X"] from “X::Y::Z” in Ruby?
+def module_split(module_path, separator = "::")
+  modules = module_path.split(separator)
+  modules.length.downto(1).map { |n| modules.first(n).join(separator) }
+end
+
+module_split("W::X::Y::Z")
+=end
