@@ -9,6 +9,6 @@ input : 6 output : 10
 input :20 output : 80
 =end
 
-def method_12478687
-
+def method_12478687(arr, i)
+  arr.sort.each { |n| return n if n > i }
 end
